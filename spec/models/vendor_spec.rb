@@ -29,7 +29,8 @@ describe Vendor do
 
     subject { Vendor.all }
 
-    specify { should == [@a, @y, @z]}
+    specify { subject.first.should == @a}
+    specify { subject.last.should  == @z}
   end
 
   def create_vendor(fields = {})
