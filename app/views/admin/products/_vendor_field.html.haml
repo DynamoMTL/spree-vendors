@@ -1,0 +1,6 @@
+- f.field_container :vendor do
+  = f.label :vendor_id, t("vendor")
+  %span.required *
+  %br
+  = f.collection_select(:vendor_id, Vendor.all, :id, :name, {:include_blank => t('none')}, {:style => 'width:200px'})
+  = f.error_message_on :vendor_id

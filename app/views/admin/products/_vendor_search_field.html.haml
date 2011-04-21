@@ -1,0 +1,4 @@
+%p 
+  = label :vendor_id_equals, t(:vendor)
+  %br 
+  = f.collection_select :vendor_id_equals, Vendor.all, :id, :name, :include_blank => t('all_vendors')

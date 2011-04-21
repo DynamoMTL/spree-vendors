@@ -1,0 +1,19 @@
+=render :partial => 'admin/shared/product_sub_menu'
+.toolbar
+  %ul.actions
+    %li#new_vendor_link
+      = button_link_to t("new_vendor"), new_object_url, {:remote => true, :icon => 'add'}
+  %br.clear/
+#new_vendor
+%h1= t('vendors')
+%table.index
+  %tr
+    %th= t("name")
+    %th
+  - @vendors.each do |vendor|
+    %tr{:id => dom_id(vendor)}
+      %td= vendor.name
+      %td.actions
+        = link_to_edit vendor
+        = link_to_delete vendor
+        = link_to_with_icon 'box', t('products'), admin_products_path("search[vendor_id_equals]" => vendor.id)

@@ -1,0 +1,6 @@
+= form.field_container :name do
+  = form.label :name, t("name")
+  %span.required *
+  %br
+  = form.text_field :name, :class => 'fullwidth title'
+  = form.error_message_on :name
